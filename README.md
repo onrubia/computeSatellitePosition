@@ -1,12 +1,19 @@
 # GPS/Galileo/Beidou/IRNSS/QZSS satellite position calculator for MATLAB
 
-
 Function that computes the ECEF coordinates of the desired GPS/Galileo/Beidou/IRNSS/QZSS
 satellites by automatically downloading the multiconstellation BRDM ephemeris
-file from ftp://ftp.cddis.eosdis.nasa.gov. Requires 7zip or WinRar to decompress
-the downloaded ephemeris files. The ephemeris are stored for later reuse.
+file from ftp://ftp.cddis.eosdis.nasa.gov. The ephemeris are stored for later reuse.
 
-## Content
+Computable dates: from 1/Jan/2013 until two days ago (to ensure the ephemeris file will be uploaded to the server).
+
+All the contents were developed for the [passive remote sensing group (RSLab)](https://prs.upc.edu/) as a part of the [Remote Sensing Laboratory](http://www.tsc.upc.edu/en/research/rslab), a research line of the [CommmSensLab Group](http://www.tsc.upc.edu/en/research/commsenslab) at the [Signal Theory and Communications Department (TSC)](http://www.tsc.upc.edu/en) of the [Universitat Politècnica de Catalunya (UPC)](http://www.upc.edu/?set_language=en).
+
+New versions of this program may be found at [GitHub](https://github.com/onrubia/computeSatellitePosition). 
+
+## REQUIREMENTS
+* 7-zip or Winrar : required to decompress the ephemeris files.
+
+## CONTENT
 * computeSatellitePoisition : Code that computes the ECEF satellite position from a vector of GPS times, a vector of GNSS satellites, and a vector of the GNSS systems of each satellite.
 
 * file2Rinex303nav : Code that reads the BRDM mixed RINEX file to parse the ephemeris

@@ -70,3 +70,9 @@ satsys = [ 1 1 4 4 ];
 outputfolder = 'gnss';
 
 [x,y,z] = computeSatellitePosition(gpstime, satnum, satsys, outputfolder);
+
+## Licence
+You may find a specific licence files in each directory.
+
+## Contact
+Raul Onrubia (onrubia at tsc.upc.edu)

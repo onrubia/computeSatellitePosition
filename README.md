@@ -1,24 +1,41 @@
+# GPS/Galileo/Beidou/IRNSS/QZSS satellite position calculator for MATLAB
+
+
 Function that computes the ECEF coordinates of the desired GPS/Galileo/Beidou/IRNSS/QZSS
 satellites by automatically downloading the multiconstellation BRDM ephemeris
 file from ftp://ftp.cddis.eosdis.nasa.gov. Requires 7zip or WinRar to decompress
 the downloaded ephemeris files. The ephemeris are stored for later reuse.
 
-**USAGE:**
+## Content
+* computeSatellitePoisition : Code that computes the ECEF satellite position from a vector of GPS times, a vector of GNSS satellites, and a vector of the GNSS systems of each satellite.
+
+* file2Rinex303nav : Code that reads the BRDM mixed RINEX file to parse the ephemeris
+
+* getSatECED : Code that given a time and an ephemeris computes the ECEF position
+
+## USAGE:
   [x,y,z] = computeSatellitePoisition(gpstime, satnum, satsys, outputfolder);
 	
   [x,y,z] = computeSatellitePoisition(gpstime, satnum, satsys, outputfolder, rec_pos);
 
 **INPUT PARAMETERS:**
  * gpstime                     : GPS time in seconds
+ 
  * satnum                      : Satellite number
+ 
  * satsys                     : Satellite system (GPS 1, SBAS 2, GLONASS 3, GALILEO 4, BEIDOU 5, IRNSS 6, QZSS 7). NOTE: each satnum needs a satsys
+ 
  * outputfolder                : folder to store the downloaded ephemeris files (they are reused in future executions).
+ 
  * rec_pos                     : (optional) receiver position, for sagnac correction.
 
 **OUTPUT VARIABLE:**
 * x(ii,jj)                    : X Satellite ECEF position. Dimension ii corresponds to time,  dimension jj: corresponds to a pair of satellite number and system. 
+
 * y(ii,jj)                    : Y Satellite ECEF position. Dimension ii corresponds to time,  dimension jj: corresponds to a pair of satellite number and system. 
+
 * z(ii,jj)                    : Z Satellite ECEF position. Dimension ii corresponds to time,  dimension jj: corresponds to a pair of satellite number and system. 
+
 NOTE: a NaN value in x,y,z happens when the program is not able to solve
 the Kepler equation for Eccentric Anomaly with the recursive method OR
 there was no ephemeris data of that particular satellite in the files

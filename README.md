@@ -41,7 +41,7 @@ the Kepler equation for Eccentric Anomaly with the recursive method OR
 there was no ephemeris data of that particular satellite in the files
 downloaded from ftp://ftp.cddis.eosdis.nasa.gov
 
-**EXAMPLE:**
+## EXAMPLE:
 
 To compute the satellite possition of the GPS satellites 1 and 5, and the
 the satellite possition of the Galileo satellites 8 and 9, in the GPS
